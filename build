@@ -3,4 +3,10 @@ set -e
 
 npx prettier --write ./src ./package.json ./tsconfig.json
 npx eslint src
+
+rm -rf ./out
+rm -rf ./dist
+
 npx tsc
+node ./out/main.js
+rm -rf ./out
