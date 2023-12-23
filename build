@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+npx prettier --write ./src ./package.json ./tsconfig.json
+npx eslint src
+npx tsc
