@@ -36,7 +36,7 @@ export function getPage(body: string): string {
  *   <body></body>
  * </html>
  */
-function trim(s: string): string {
+export function trim(s: string): string {
   const lines = s.split("\n").slice(1, -1);
   const indent = lines[0].indexOf("<");
   return lines.map((line) => line.slice(indent)).join("\n");
@@ -67,7 +67,7 @@ function trim(s: string): string {
  *   </body>
  * </html>
  */
-function indent(s: string, n: number): string {
+export function indent(s: string, n: number): string {
   return s
     .split("\n")
     .map((line, i) => (i === 0 ? line : " ".repeat(n * 2) + line))
