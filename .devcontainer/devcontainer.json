@@ -1,6 +1,8 @@
 {
   "name": "Hemingroth Blog",
   "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "sudo service nginx start",
+  "forwardPorts": [8090],
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "customizations": {
     "vscode": {
