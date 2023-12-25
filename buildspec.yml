@@ -8,4 +8,6 @@ phases:
     commands:
       - ./build
 artifacts:
-    base-directory: dist
+  files: 
+    - '**/*'
+  base-directory: dist
