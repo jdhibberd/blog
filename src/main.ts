@@ -36,10 +36,9 @@ function buildArticlePages(): Article[] {
     const markdown = fs.readFileSync(path.join(ARTICLE_DIR, file), "utf-8");
     const title = getTitle(markdown);
     const created = path.parse(file).name;
-    const filename = `${created}.html`;
-    index.push({ title, created, path: filename });
+    index.push({ title, created, path: `/${created}` });
     const html = getPage(converter.makeHtml(markdown));
-    fs.writeFileSync(path.join(OUTPUT_DIR, filename), html);
+    fs.writeFileSync(path.join(OUTPUT_DIR, `${created}.html`), html);
   });
   return index;
 }
