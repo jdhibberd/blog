@@ -9,4 +9,5 @@ rm -rf ./dist
 
 npx tsc
 node ./out/main.js
+cat ./css/* > ./dist/style.css
 rm -rf ./out

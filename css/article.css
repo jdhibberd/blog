@@ -1,0 +1,97 @@
+/* 
+avoid having padding/margin above an element, and instead control verical
+spacing by allowing each element to control the maring below it
+*/
+
+body.article {
+  color: var(--primary-color);
+  display: grid;
+  grid-template-columns: auto minmax(100px, 700px) auto;
+  grid-template-rows: repeat(3, auto);
+  margin: calc(var(--spacing-block) * 2);
+  font-family: sans-serif;
+  font-size: 1rem;
+  text-underline-offset: 0.2em;
+}
+
+body.article > header {
+  grid-column: 2;
+}
+
+body.article > header > h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+  margin: 0 0 calc(var(--spacing-block) * 2) 0;
+}
+
+body.article > header > h2 > a {
+  color: var(--logo-color);
+  text-decoration: none;
+}
+
+body.article > article {
+  grid-column: 2;
+}
+
+body.article > article > h1 {
+  font-size: 3.4rem;
+  letter-spacing: -0.02em;
+  line-height: 110%;
+  margin: 0 0 calc(var(--spacing-block) * 2) 0;
+}
+
+body.article > article > h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+body.article > article > h3:first-of-type {
+  margin: 0 0 var(--item-gap) 0;
+}
+
+body.article > article > h3:nth-of-type(2) {
+  margin-bottom: calc(var(--spacing-block) * 3);
+  padding-bottom: calc(var(--spacing-block) * 3);
+  border-bottom: solid 1px var(--primary-color);
+}
+
+body.article > article > h2 {
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 calc(var(--spacing-block) * 2) 0;
+}
+
+body.article > article > p {
+  line-height: 135%;
+  margin: 0 0 calc(var(--spacing-block) * 2) 0;
+}
+
+body.article > article > p:has(+ h2) {
+  margin: 0 0 calc(var(--spacing-block) * 3) 0;
+}
+
+body.article > article > p:last-of-type {
+  margin: 0 0 calc(var(--spacing-block) * 3) 0;
+}
+
+body.article > footer {
+  border-top: solid 1px var(--primary-color);
+  padding-top: calc(var(--spacing-block) * 3);
+  margin-bottom: var(--spacing-block);
+  grid-column: 2;
+}
+
+body.article > footer > ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+body.article > footer > ul > li:first-of-type {
+  margin-bottom: var(--item-gap);
+}
+
+body.article > footer > ul > li > a {
+  color: var(--primary-color);
+}

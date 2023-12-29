@@ -1,0 +1,54 @@
+body.index {
+  color: var(--primary-color);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: calc(var(--spacing-block) * 2);
+  font-family: sans-serif;
+  font-size: 1rem;
+  text-underline-offset: 0.2em;
+  padding: 0;
+}
+
+body.index > header > h2 {
+  color: var(--logo-color);
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+  margin: 0 0 calc(var(--spacing-block) * 2) 0;
+}
+
+body.index > main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-block) * 2);
+  margin-bottom: calc(var(--spacing-block) * 2);
+}
+
+body.index > main > a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+body.index > main > a:hover {
+  text-decoration: underline;
+}
+
+body.index > main > a > div {
+  --size: 220px;
+  border: solid 1px black;
+  width: var(--size);
+  height: var(--size);
+  padding: calc(var(--spacing-block) * 2);
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+}
+
+body.index > main > a > div > h1 {
+  font-size: 1.7rem;
+  letter-spacing: -0.02em;
+  line-height: 110%;
+  margin: 0;
+}
+
+body.index > main > a > div > div {
+  margin-bottom: var(--item-gap);
+}
